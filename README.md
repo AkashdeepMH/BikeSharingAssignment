@@ -55,6 +55,7 @@ This dataset captures the various environmental and temporal factors that affect
     - **Model 3**: Further refined by removing features with high Variance Inflation Factor (VIF) values to address multicollinearity. This model showed improved performance over Model 2.
     - **Model 4**: Further refinement based on both p-values and VIF, leading to a more stable model with lower multicollinearity.
     - **Model 5**: The final refined model with the lowest VIF and significant p-values, providing a balance between complexity and performance with an R-squared value close to Model 1 but with better generalizability.
+      
 ![image](https://github.com/user-attachments/assets/85e80abe-9d6a-467c-ac0b-a11fd8132094)
 
 The progression from Model 1 to Model 5 highlighted the importance of feature selection and multicollinearity handling in building a robust predictive model. Each step in the refinement process contributed to improving the model’s accuracy, stability, and interpretability.
