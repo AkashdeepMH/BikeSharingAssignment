@@ -75,10 +75,8 @@ By specifying these versions, users can recreate the environment and obtain cons
 
 ## Acknowledgements
 I would like to thank the folowing for teaching important concepts needed to work on this BoomBikes Bike Share Prediction dataset:
-Kshitij Jain ,Director at upGrad
-Mirza Rahim Baig, Lead Business Analyst at Flipkart
-And all other educators affiliated to IITB or Upgrad.com
-And all the programmers/scholars who have contributed to the field of Machine learning and created libraries in python to make this repository possible.
+Kshitij Jain (Director at upGrad), Mirza Rahim Baig(Lead Business Analyst at Flipkart) And all other educators affiliated to IITB or Upgrad.com
+Gratitude to All the programmers/scholars who have contributed to the field of Machine learning and created libraries in python to make this repository possible.
 
 ### Project Credits and References
 
