@@ -60,6 +60,11 @@ This dataset captures the various environmental and temporal factors that affect
 
 The progression from Model 1 to Model 5 highlighted the importance of feature selection and multicollinearity handling in building a robust predictive model. Each step in the refinement process contributed to improving the model’s accuracy, stability, and interpretability.
 
+# The final model equation based on the coefficients of Model 5 can be obtained by following code: 
+print(f"Target variable cnt = {model_5.params[0]:.4f} + {model_5.params['temp']:.4f} × temp + {model_5.params['yr_1']:.4f} × yr_1 + {model_5.params['season_4']:.4f} × season_4 + {model_5.params['mnth_9']:.4f} × mnth_9 + {model_5.params['season_2']:.4f} × season_2 - {abs(model_5.params['weathersit_3']):.4f} × weathersit_3 - {abs(model_5.params['windspeed']):.4f} × windspeed - {abs(model_5.params['holiday_1']):.4f} × holiday_1 - {abs(model_5.params['weathersit_2']):.4f} × weathersit_2")
+
+*Target variable cnt = 708.2556 + 3621.6996 × temp + 2003.7639 × yr_1 + 1251.0152 × season_4 + 1566.5196 × mnth_9 + 635.3779 × season_2 - 2263.7136 × weathersit_3 - 786.0138 × windspeed - 310.2657 × holiday_1 - 709.2121 × weathersit_2*
+
 ## Technologies Used
 ### Libraries and Versions Used in This Project
 
