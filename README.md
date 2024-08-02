@@ -40,6 +40,53 @@ This dataset captures the various environmental and temporal factors that affect
 
 ## Conclusions
 ### Conclusions from the Analysis
+![image](https://github.com/user-attachments/assets/dccaae44-5edf-4ac0-b8e8-6f503c20e3a9)
+
+![image](https://github.com/user-attachments/assets/b43a0dc9-5d99-460a-81a3-d463b2612ca5)
+
+![image](https://github.com/user-attachments/assets/be3a4600-15bb-4cdd-85d5-22c7284dc1c5)
+
+![image](https://github.com/user-attachments/assets/f31e8de3-5bd1-4470-80f0-33beaa5a67d8)
+
+![image](https://github.com/user-attachments/assets/5313bddf-126c-49ab-b1b1-49f1cb92ec6b)
+
+# Evaluation Metrics
+
+1. **Lower AIC and BIC**:
+   - **Model 6** has significantly lower AIC (789.81) and BIC (829.14) values compared to **Model 5** (AIC: 8265.74, BIC: 8337.75). Lower AIC and BIC values indicate a better model in terms of fit while penalizing for the number of parameters. This suggests that Model 6 strikes a better balance between model complexity and goodness of fit.
+
+2. **Adjusted R-squared**:
+   - While **Model 6** has a lower Adjusted R-squared (0.7817) compared to **Model 5** (0.8403), the difference is not as critical as the difference in AIC and BIC values. The Adjusted R-squared indicates how well the model explains the variance in the dependent variable, adjusted for the number of predictors. Even though Model 6 explains slightly less variance, the significantly lower AIC and BIC values make it a more parsimonious model.
+
+3. **Durbin-Watson Statistic**:
+   - Both models have similar Durbin-Watson statistics, indicating that they both handle autocorrelation in residuals similarly well. A value close to 2 suggests there is no autocorrelation problem.
+
+4. **Max VIF**:
+   - Both models have very low Max VIF values (Model 5: 0.9935, Model 6: 0.9559), indicating that multicollinearity is not an issue for either model.
+
+# Conclusion
+
+- **Model 6** is preferred over **Model 5** primarily due to its much lower AIC and BIC values. This suggests that Model 6 provides a more efficient and potentially more accurate model by balancing fit and complexity better than Model 5.
+- The lower Adjusted R-squared value for Model 6 is outweighed by the significant improvements in AIC and BIC.
+- Overall, Model 6 is more parsimonious and, according to the model selection criteria (AIC and BIC), is the better model despite the slightly lower Adjusted R-squared.
+
+![image](https://github.com/user-attachments/assets/59ee2fb0-5b74-461c-b08a-039e20816aad)
+
+## Best Fit Equation for cnt:
+
+const        -0.706429
+season        0.211999
+yr            1.033006
+holiday      -0.345248
+weekday       0.035111
+weathersit   -0.322366
+temp          0.500588
+hum          -0.068873
+windspeed    -0.109164
+dtype: float64
+Best Fit Equation for cnt:
+cnt = -0.7064 + 0.2120 * season + 1.0330 * yr - 0.3452 * holiday + 0.0351 * weekday - 0.3224 * weathersit + 0.5006 * temp - 0.0689 * hum - 0.1092 * windspeed
+
 
 1. **Variable Significance**: The analysis demonstrated that several variables significantly affect bike rental demands. Key predictors include temperature (`temp`), year (`yr`), weather conditions (`weathersit`), and specific months and seasons. This emphasizes the need to consider both temporal and weather-related factors in demand forecasting models for bike rentals.
 
@@ -60,10 +107,6 @@ This dataset captures the various environmental and temporal factors that affect
 
 The progression from Model 1 to Model 5 highlighted the importance of feature selection and multicollinearity handling in building a robust predictive model. Each step in the refinement process contributed to improving the model’s accuracy, stability, and interpretability.
 
-# The final model equation based on the coefficients of Model 5 can be obtained by following code: 
-print(f"Target variable cnt = {model_5.params[0]:.4f} + {model_5.params['temp']:.4f} × temp + {model_5.params['yr_1']:.4f} × yr_1 + {model_5.params['season_4']:.4f} × season_4 + {model_5.params['mnth_9']:.4f} × mnth_9 + {model_5.params['season_2']:.4f} × season_2 - {abs(model_5.params['weathersit_3']):.4f} × weathersit_3 - {abs(model_5.params['windspeed']):.4f} × windspeed - {abs(model_5.params['holiday_1']):.4f} × holiday_1 - {abs(model_5.params['weathersit_2']):.4f} × weathersit_2")
-
-*Target variable cnt = 708.2556 + 3621.6996 × temp + 2003.7639 × yr_1 + 1251.0152 × season_4 + 1566.5196 × mnth_9 + 635.3779 × season_2 - 2263.7136 × weathersit_3 - 786.0138 × windspeed - 310.2657 × holiday_1 - 709.2121 × weathersit_2*
 
 ## Technologies Used
 ### Libraries and Versions Used in This Project
