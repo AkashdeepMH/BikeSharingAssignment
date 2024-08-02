@@ -1,6 +1,5 @@
 # Multiple Linear Regression model for the prediction of demand for shared bikes using BoomBikes Dataset
 
-# Project Name
 This repository is a programming assignment wherein you have to build a multiple linear regression model for the prediction of demand for shared bikes.
 
 ## Table of Contents
@@ -39,7 +38,13 @@ The dataset used in this project is a bike-sharing dataset from BoomBikes, a US 
 This dataset captures the various environmental and temporal factors that affect bike rentals, making it suitable for building a predictive model to understand and forecast demand.
 
 ## Conclusions
-### Conclusions from the Analysis
+1. **Variable Significance**: The analysis demonstrated that several variables significantly affect bike rental demands. Key predictors include temperature (`temp`), year (`yr`), weather conditions (`weathersit`), and specific months and seasons. This emphasizes the need to consider both temporal and weather-related factors in demand forecasting models for bike rentals.
+
+2. **Yearly Increase in Demand**: Including the `yr` variable in the model confirmed that there is a noticeable increase in bike rentals from year to year, reflecting the growing popularity of the bike-sharing system. This insight is crucial for strategic planning and scaling operations to accommodate the increasing customer base.
+
+3. **Impact of Weather Conditions**: Weather conditions play a critical role in bike rental patterns. Bad weather conditions (like rain and snow) significantly decrease the demand, whereas clear and mild weather encourages more usage. This finding suggests that weather forecasts should be integrated into the demand prediction models for more accurate forecasting.
+
+
 ![image](https://github.com/user-attachments/assets/dccaae44-5edf-4ac0-b8e8-6f503c20e3a9)
 
 ![image](https://github.com/user-attachments/assets/b43a0dc9-5d99-460a-81a3-d463b2612ca5)
@@ -64,7 +69,15 @@ This dataset captures the various environmental and temporal factors that affect
 4. **Max VIF**:
    - Both models have very low Max VIF values (Model 5: 0.9935, Model 6: 0.9559), indicating that multicollinearity is not an issue for either model.
 
-# Conclusion
+**Model Optimization and Refinement**: The analysis involved building multiple models (Model 1 to Model 5) to progressively refine the predictors and improve the model performance:
+    - **Model 1**: Included all features and served as a baseline. It showed the highest R-squared value but likely suffered from overfitting due to the inclusion of all variables without selection.
+    - **Model 2**: Utilized Recursive Feature Elimination (RFE) to select key features. This model had a lower R-squared value compared to Model 1, indicating the removal of some potentially useful features.
+    - **Model 3**: Further refined by removing features with high Variance Inflation Factor (VIF) values to address multicollinearity. This model showed improved performance over Model 2.
+    - **Model 4**: Further refinement based on both p-values and VIF, leading to a more stable model with lower multicollinearity.
+    - **Model 5**: The final refined model with the lowest VIF and significant p-values, providing a balance between complexity and performance with an R-squared value close to Model 1 but with better generalizability.
+      
+![image](https://github.com/user-attachments/assets/85e80abe-9d6a-467c-ac0b-a11fd8132094)
+
 
 - **Model 6** is preferred over **Model 5** primarily due to its much lower AIC and BIC values. This suggests that Model 6 provides a more efficient and potentially more accurate model by balancing fit and complexity better than Model 5.
 - The lower Adjusted R-squared value for Model 6 is outweighed by the significant improvements in AIC and BIC.
@@ -86,26 +99,6 @@ windspeed    -0.109164
 dtype: float64
 Best Fit Equation for cnt:
 cnt = -0.7064 + 0.2120 * season + 1.0330 * yr - 0.3452 * holiday + 0.0351 * weekday - 0.3224 * weathersit + 0.5006 * temp - 0.0689 * hum - 0.1092 * windspeed
-
-
-1. **Variable Significance**: The analysis demonstrated that several variables significantly affect bike rental demands. Key predictors include temperature (`temp`), year (`yr`), weather conditions (`weathersit`), and specific months and seasons. This emphasizes the need to consider both temporal and weather-related factors in demand forecasting models for bike rentals.
-
-2. **Yearly Increase in Demand**: Including the `yr` variable in the model confirmed that there is a noticeable increase in bike rentals from year to year, reflecting the growing popularity of the bike-sharing system. This insight is crucial for strategic planning and scaling operations to accommodate the increasing customer base.
-![image](https://github.com/user-attachments/assets/d8f80b47-c36a-4186-b72e-9d04ec8b088e)
-
-3. **Impact of Weather Conditions**: Weather conditions play a critical role in bike rental patterns. Bad weather conditions (like rain and snow) significantly decrease the demand, whereas clear and mild weather encourages more usage. This finding suggests that weather forecasts should be integrated into the demand prediction models for more accurate forecasting.
-![image](https://github.com/user-attachments/assets/145d9656-e281-40f1-bc2e-654dcd79b4bd)
-
-4. **Model Optimization and Refinement**: The analysis involved building multiple models (Model 1 to Model 5) to progressively refine the predictors and improve the model performance:
-    - **Model 1**: Included all features and served as a baseline. It showed the highest R-squared value but likely suffered from overfitting due to the inclusion of all variables without selection.
-    - **Model 2**: Utilized Recursive Feature Elimination (RFE) to select key features. This model had a lower R-squared value compared to Model 1, indicating the removal of some potentially useful features.
-    - **Model 3**: Further refined by removing features with high Variance Inflation Factor (VIF) values to address multicollinearity. This model showed improved performance over Model 2.
-    - **Model 4**: Further refinement based on both p-values and VIF, leading to a more stable model with lower multicollinearity.
-    - **Model 5**: The final refined model with the lowest VIF and significant p-values, providing a balance between complexity and performance with an R-squared value close to Model 1 but with better generalizability.
-      
-![image](https://github.com/user-attachments/assets/85e80abe-9d6a-467c-ac0b-a11fd8132094)
-
-The progression from Model 1 to Model 5 highlighted the importance of feature selection and multicollinearity handling in building a robust predictive model. Each step in the refinement process contributed to improving the model’s accuracy, stability, and interpretability.
 
 
 ## Technologies Used
