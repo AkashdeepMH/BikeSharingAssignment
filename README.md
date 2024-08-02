@@ -1,7 +1,7 @@
 # Multiple Linear Regression model for the prediction of demand for shared bikes using BoomBikes Dataset
 
 # Project Name
-This assignment is a programming assignment wherein you have to build a multiple linear regression model for the prediction of demand for shared bikes.
+This repository is a programming assignment wherein you have to build a multiple linear regression model for the prediction of demand for shared bikes.
 
 ## Table of Contents
 * [General Info](#general-information)
