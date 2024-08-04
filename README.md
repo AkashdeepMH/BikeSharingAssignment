@@ -76,7 +76,6 @@ This dataset captures the various environmental and temporal factors that affect
     - **Model 4**: Further refinement based on both p-values and VIF, leading to a more stable model with lower multicollinearity.
     - **Model 5**: The final refined model with the lowest VIF and significant p-values, providing a balance between complexity and performance with an R-squared value close to Model 1 but with better generalizability.
       
-![image](https://github.com/user-attachments/assets/85e80abe-9d6a-467c-ac0b-a11fd8132094)
 
 
 - **Model 6** is preferred over **Model 5** primarily due to its much lower AIC and BIC values. This suggests that Model 6 provides a more efficient and potentially more accurate model by balancing fit and complexity better than Model 5.
